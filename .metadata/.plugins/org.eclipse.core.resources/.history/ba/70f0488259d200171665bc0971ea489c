@@ -11,8 +11,6 @@ public class Recipe_KNN {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		
-		// Read in
         System.out.println("hello Yujian!");
         ArrayList<String> ingredients= new ArrayList<String>();
         BufferedReader reader1 = new BufferedReader(new FileReader("ingredients.txt"));
@@ -43,7 +41,6 @@ public class Recipe_KNN {
             }
         }
         reader2.close();
-        // Separate the training into 6 parts and then repeat KNN 6 times with each being test data
         
 	}
 

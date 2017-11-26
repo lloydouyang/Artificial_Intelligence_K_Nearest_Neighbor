@@ -4,15 +4,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 
 public class Recipe_KNN {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		
-		// Read in
         System.out.println("hello Yujian!");
         ArrayList<String> ingredients= new ArrayList<String>();
         BufferedReader reader1 = new BufferedReader(new FileReader("ingredients.txt"));
@@ -22,13 +19,13 @@ public class Recipe_KNN {
         }
         reader1.close();
         
-        ArrayList<HashSet<String>> training= new ArrayList<HashSet<String>>();
+        ArrayList<HashMap<String,Integer>> training= new ArrayList<HashMap<String,Integer>>();
         BufferedReader reader2 = new BufferedReader(new FileReader("training.csv"));
         while ((line = reader2.readLine()) != null) {
         	int len=line.length();
         	int counter=0;
         	int prev=0;
-        	HashSet<String> hset=new HashSet<String>();
+        	HashMap<String,Integer> hmap=new HashMap<String,Integer>();
             for (int i=0; i<len;i++){
                if (line.charAt(i)=='"'){
             	   counter++;
@@ -36,15 +33,13 @@ public class Recipe_KNN {
             		   prev=i;   
             	   }
             	   else{
-            		   hset.add(line.substring(prev+1,i)); 
+            		   hmap.put(line.substring(prev+1,i),1); 
             		   
             	   }
                }
             }
         }
         reader2.close();
-        // Separate the training into 6 parts and then repeat KNN 6 times with each being test data
-        
 	}
 
 }
