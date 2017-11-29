@@ -1,0 +1,68 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
+
+public class Recipe_KNN {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		// Read in
+        ArrayList<String> ingredients= new ArrayList<String>();
+        BufferedReader reader1 = new BufferedReader(new FileReader("ingredients.txt"));
+        String line = null;
+        while ((line = reader1.readLine()) != null) {
+        	ingredients.add(line.substring(1,line.length()-1));
+        }
+        reader1.close();
+        
+        ArrayList<HashSet<String>> training= new ArrayList<HashSet<String>>();
+        BufferedReader reader2 = new BufferedReader(new FileReader("training.csv"));
+        while ((line = reader2.readLine()) != null) {
+        	int len=line.length();
+        	int counter=0;
+        	int prev=0;
+        	HashSet<String> hset=new HashSet<String>();
+            for (int i=0; i<len;i++){
+               if (line.charAt(i)=='"'){
+            	   counter++;
+            	   if (counter % 2==1){
+            		   prev=i;   
+            	   }
+            	   else{
+            		   hset.add(line.substring(prev+1,i)); 
+            		   
+            	   }
+               }
+            }
+           training.add(hset);
+        }
+        reader2.close();
+       for (int i = 0; i < 10; i++) {
+    	   		System.out.println(ingredients.get(i));
+       }
+        // Separate the training into 6 parts and then repeat KNN 6 times with each being test data
+        int index[]= {0, 299, 598, 897, 1196, 1495,1794};
+        // 6 fold cross validation
+        for (int i=0; i<6;i++){
+ 
+        	    for (h=index[i];h<index[i+1];h++){
+        	    		// loop through training data to computer K nearest distance
+        	    		for (int j=0;j<index[i]-1;j++){
+        			
+        	    		}
+	        		for (int k=i+1){
+	        			
+	        		
+	        	    }
+        	    }
+        }
+        
+	}
+
+}

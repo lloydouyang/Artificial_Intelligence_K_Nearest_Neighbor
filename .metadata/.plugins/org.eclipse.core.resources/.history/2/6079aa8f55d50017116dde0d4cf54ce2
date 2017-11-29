@@ -1,0 +1,18 @@
+import java.util.Comparator;
+
+
+public class Tuple {
+	public final Integer distance;
+	public final String cuisine;
+	public Tuple(Integer distance, String cuisine){
+		this.distance = distance;
+		this.cuisine = cuisine;
+	}
+	public Integer getDistance() {
+		return distance;
+	}
+	public String getCuisine() {
+		return cuisine;
+	}
+
+}

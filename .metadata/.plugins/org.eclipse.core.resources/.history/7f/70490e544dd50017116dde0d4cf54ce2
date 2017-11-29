@@ -1,0 +1,9 @@
+
+public class Tuple<Integer, String> {
+	public final Integer distance;
+	public final String cuisine;
+	public Tuple(Integer distance, String cuisine){
+		this.distance = distance;
+		this.cuisine = cuisine;
+	}
+}

@@ -1,0 +1,15 @@
+
+public class Receipe {
+	public final String cuisine;
+	public final HashSet ingre;
+	public Tuple(Integer distance, String cuisine){
+		this.distance = distance;
+		this.cuisine = cuisine;
+	}
+	public Integer getDistance() {
+		return distance;
+	}
+	public String getCuisine() {
+		return cuisine;
+	}
+}
