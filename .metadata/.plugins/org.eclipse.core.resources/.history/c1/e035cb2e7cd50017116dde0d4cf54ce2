@@ -137,7 +137,7 @@ public class Recipe_KNN {
 	        			f=0;
 	        			for (Tuple element: q){
 	        				if (element.getCuisine().equals(cs[j])){
-	        					if (element.getDistance()<0.0001) {
+	        					if (element.getDistance()<0.01) {
 	        						maxs=element.getCuisine();
 	        						flag=true;
 	        						break;

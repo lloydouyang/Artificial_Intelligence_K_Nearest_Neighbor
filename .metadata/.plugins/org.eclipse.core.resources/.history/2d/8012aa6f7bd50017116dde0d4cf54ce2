@@ -69,9 +69,9 @@ public class Recipe_KNN {
             training.add(recep);
        }
        reader2.close();
-//       for (int i = 0; i < 10; i++) {
-//    	   		System.out.println(ingredients.get(i));
-//       }
+       for (int i = 0; i < 10; i++) {
+    	   		System.out.println(ingredients.get(i));
+       }
 		 // Separate the training into 6 parts and then repeat KNN 6 times with each being test data
         int index[]= {0, 299, 598, 897, 1196, 1495,1794};
         int kk=10;
@@ -137,7 +137,7 @@ public class Recipe_KNN {
 	        			f=0;
 	        			for (Tuple element: q){
 	        				if (element.getCuisine().equals(cs[j])){
-	        					if (element.getDistance()<0.0001) {
+	        					if (element.getDistance()<0.00001) {
 	        						maxs=element.getCuisine();
 	        						flag=true;
 	        						break;
@@ -181,7 +181,6 @@ public class Recipe_KNN {
         System.out.println(errorRate[0]+" "+errorRate[1]+" "+errorRate[2]+" "+errorRate[3]+" "+errorRate[4]+" "+errorRate[5]);
         System.out.println("Max is: "+ mmax);
         System.out.println("Min is: "+ mmin);
-        System.out.println("Mean is: "+ mean);
         System.out.println("Generalization Error is: "+ var);
 	}
 	
