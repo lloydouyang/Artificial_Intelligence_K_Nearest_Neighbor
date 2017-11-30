@@ -75,7 +75,7 @@ public class Recipe_KNN {
 //       }
 		 // Separate the training into 6 parts and then repeat KNN 6 times with each being test data
         int index[]= {0, 299, 598, 897, 1196, 1495,1794};
-        int kk=20;
+        int kk=16;
         double dis=0;
 	    int zai=0;
 	    int buzai=0;

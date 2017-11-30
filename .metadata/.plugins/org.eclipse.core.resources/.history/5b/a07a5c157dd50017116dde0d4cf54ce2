@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -75,7 +74,7 @@ public class Recipe_KNN {
 //       }
 		 // Separate the training into 6 parts and then repeat KNN 6 times with each being test data
         int index[]= {0, 299, 598, 897, 1196, 1495,1794};
-        int kk=20;
+        int kk=10;
         double dis=0;
 	    int zai=0;
 	    int buzai=0;
@@ -83,7 +82,6 @@ public class Recipe_KNN {
 	    double maxx=0;
 	    int error=0;
 	    double[] errorRate={0,0,0,0,0,0};
-	    Collections.shuffle(training);
         // 6 fold cross validation
         for (int i=0; i<6;i++){
         		error=0;
@@ -144,7 +142,7 @@ public class Recipe_KNN {
 	        						flag=true;
 	        						break;
 	        					}
-	        					f=f+(double)((double)1/Math.pow((double)element.getDistance(),2));
+	        					f=f+(double)((double)1/(double)element.getDistance());
 	        				}
 	        			}
 	        			if (flag) break;
@@ -157,9 +155,9 @@ public class Recipe_KNN {
 	        			error++;
 	        		}	
 //	        		for (Tuple element: q){
-//	        		System.out.print(element.getDistance());
+//	        		System.out.println(element.getCuisine());
 //	        		}
-//	        		System.out.println();
+	        		//System.out.println(maxs);
         	    }
         	    errorRate[i]=(double)(error)/((double)(299))*(double)(100);
         	    
