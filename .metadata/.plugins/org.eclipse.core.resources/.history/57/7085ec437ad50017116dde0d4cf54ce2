@@ -133,7 +133,6 @@ public class Recipe_KNN {
 	        		maxx=0;
 	        		double f=0;
 	        		for (int j=0;j<20;j++){
-	        			f=0;
 	        			for (Tuple element: q){
 	        				if (element.getCuisine().equals(cs[j])){
 	        					f=f+1.0;

@@ -133,7 +133,6 @@ public class Recipe_KNN {
 	        		maxx=0;
 	        		double f=0;
 	        		for (int j=0;j<20;j++){
-	        			f=0;
 	        			for (Tuple element: q){
 	        				if (element.getCuisine().equals(cs[j])){
 	        					f=f+1.0;
@@ -175,7 +174,7 @@ public class Recipe_KNN {
         System.out.println(errorRate[0]+" "+errorRate[1]+" "+errorRate[2]+" "+errorRate[3]+" "+errorRate[4]+" "+errorRate[5]);
         System.out.println("Max is: "+ mmax);
         System.out.println("Min is: "+ mmin);
-        System.out.println("Generalization Error is: "+ var);
+        System.out.println("Generalization Error is: "+ (double)var*(double)10000);
 	}
 	
 }

@@ -133,7 +133,6 @@ public class Recipe_KNN {
 	        		maxx=0;
 	        		double f=0;
 	        		for (int j=0;j<20;j++){
-	        			f=0;
 	        			for (Tuple element: q){
 	        				if (element.getCuisine().equals(cs[j])){
 	        					f=f+1.0;
@@ -153,13 +152,13 @@ public class Recipe_KNN {
 //	        		}
 	        		//System.out.println(maxs);
         	    }
-        	    errorRate[i]=(double)(error)/((double)(299))*(double)(100);
+        	    errorRate[i]=(double)(error)/((double)(299))*(diuble);
         	    
         }
         
-        double mmax=0.0;
-        double mmin=200.0;
-        double sum=0.0;
+        double mmax=0;
+        double mmin=2;
+        double sum=0;
         double mean;
         for (int i=0;i<6;i++){
         		if (errorRate[i]>mmax) mmax=errorRate[i];
@@ -173,9 +172,9 @@ public class Recipe_KNN {
     		}
         var=(double)(var)/(double)(6);
         System.out.println(errorRate[0]+" "+errorRate[1]+" "+errorRate[2]+" "+errorRate[3]+" "+errorRate[4]+" "+errorRate[5]);
-        System.out.println("Max is: "+ mmax);
-        System.out.println("Min is: "+ mmin);
-        System.out.println("Generalization Error is: "+ var);
+        System.out.println("Max is: "+ (double)mmax*(double)100);
+        System.out.println("Min is: "+ (double)mmin*(double)100);
+        System.out.println("Generalization Error is: "+ (double)var*(double)10000);
 	}
 	
 }
